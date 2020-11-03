@@ -1,7 +1,17 @@
-import React from 'react';
+import React from "react";
+import UserList from "../components/UserList";
 
-const App = () =>{
-    return <h2>User page work!!</h2>
-}
+const Users = () => {
+  const USERS = [
+    {
+      id: "u1",
+      name: "Taylor Durden",
+      image:
+        "https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg",
+      places: "3",
+    },
+  ];
+  return <UserList items = {USERS}/>;
+};
 
-export default App;
+export default Users;
