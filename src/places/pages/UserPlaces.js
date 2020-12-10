@@ -1,8 +1,6 @@
 import React from 'react';
-import PlaceItem from '../components/PlaceItem';
-
 import PlaceList from '../components/PlaceList';
-
+import {useParams} from 'react-router-dom';
 const DUMMY_PLACES =[
     {
         id : 'p1',
@@ -26,13 +24,17 @@ const DUMMY_PLACES =[
            lat: 40,
            lng: 40 
         },
-        creator:'u1'
+        creator:'u2'
     }
 
-]
+];
 
-const UserPlaces = props => {
-    return <PlaceList items={DUMMY_PLACES}></PlaceList>
+const UserPlaces = () => {
+
+    const userId = useParams().userId;
+    const loadedPlaces = DUMMY_PLACES.filter(place => place.creator === userId);
+
+    return <PlaceList items={loadedPlaces}></PlaceList>
 };
 
 
