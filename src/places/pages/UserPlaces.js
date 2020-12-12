@@ -7,7 +7,7 @@ const DUMMY_PLACES =[
         title : 'a building',
         description : 'none desc...',
         imageUrl : 'https://i12.haber7.net//haber/haber7/photos/2017/24/RMNu7_1497686337_1889.jpg',
-        adress: 'tr no:112',
+        address: 'tr no:112',
         location:{
            lat: 40,
            lng: 40 
@@ -19,7 +19,7 @@ const DUMMY_PLACES =[
         title : 'another building',
         description : 'none desc...',
         imageUrl : 'https://i12.haber7.net//haber/haber7/photos/2017/24/RMNu7_1497686337_1889.jpg',
-        adress: 'tr no:112',
+        address: 'tr no:112',
         location:{
            lat: 40,
            lng: 40 
