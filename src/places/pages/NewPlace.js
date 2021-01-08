@@ -22,9 +22,9 @@ const formReducer = (state, action) => {
         ...state,
         inputs: {
           ...state.inputs,
-          [action.inputId]: { value: action.value, isValid: action.isValid }
+          [action.inputId]: { value: action.value, isValid: action.isValid },
         },
-        isValid: formIsValid
+        isValid: formIsValid,
       };
     default:
       return state;
@@ -35,27 +35,32 @@ const NewPlace = () => {
   const [formState, dispatch] = useReducer(formReducer, {
     inputs: {
       title: {
-        value: '',
-        isValid: false
+        value: "",
+        isValid: false,
       },
       description: {
-        value: '',
-        isValid: false
-      }
+        value: "",
+        isValid: false,
+      },
     },
-    isValid: false
+    isValid: false,
   });
   const inputHandler = useCallback((id, value, isValid) => {
     dispatch({
-      type: 'INPUT_CHANGE',
+      type: "INPUT_CHANGE",
       value: value,
       isValid: isValid,
-      inputId: id
+      inputId: id,
     });
   }, []);
 
+  const placeSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log(formState.inputs); //will send backend
+  };
+
   return (
-    <form className="place-form">
+    <form className="place-form" onSubmit={placeSubmitHandler}>
       <Input
         id="title"
         element="input"
@@ -71,6 +76,14 @@ const NewPlace = () => {
         label="Desciption"
         validators={[VALIDATOR_MINLENGTH(5)]}
         errorText="enter description error message!!!!"
+        onInput={inputHandler}
+      ></Input>
+      <Input
+        id="address"
+        element="input"
+        label="Address"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="enter address error message!!!!"
         onInput={inputHandler}
       ></Input>
       <Button type="submit" disabled={!formState.isValid}>
