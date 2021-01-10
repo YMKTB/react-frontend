@@ -57,7 +57,7 @@ const UpdatePlace = () => {
         element="input"
         type="text"
         label="Title"
-        validator={[VALIDATOR_REQUIRE()]}
+        validators={[VALIDATOR_REQUIRE()]}
         errorText="enter valid address"
         onInput={() => {}}
         value={identifiedPlace.title}
@@ -67,7 +67,7 @@ const UpdatePlace = () => {
         id="description"
         element="textarea"
         label="Description"
-        validator={[VALIDATOR_MINLENGTH(5)]}
+        validators={[VALIDATOR_MINLENGTH(5)]}
         errorText="enter valid address desc"
         onInput={() => {}}
         value={identifiedPlace.description}
