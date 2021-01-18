@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 const DUMMY_PLACES =[
     {
         id : 'p1',
-        title : 'a building',
+        title : 'a building 1',
         description : 'none desc...',
         imageUrl : 'https://i12.haber7.net//haber/haber7/photos/2017/24/RMNu7_1497686337_1889.jpg',
         address: 'tr no:112',
