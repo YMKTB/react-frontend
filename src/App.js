@@ -15,7 +15,7 @@ import Auth from "./user/pages/Auth";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import { AuthContext } from "./shared/context/auth-context";
 const App = () => {
-  const [isLoggoedIn, setIsLoggoedIn] = useState(false);
+  const [isLoggoedIn, setIsLoggedIn] = useState(false);
   const login = useCallback(() => {
     setIsLoggedIn(true);
   }, []);
